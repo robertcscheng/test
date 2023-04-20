@@ -1,0 +1,68 @@
+# To invoke Git Bash window 
+# bash ' "C:\Program Files\Git\bin\sh.exe" --login '
+# 1. >bash
+# 2. >start
+# 3. >start bash
+# 4. >exit
+alias ll="ls -la" 
+alias more="less -de"
+alias va="vi ~/.alias | more"
+alias sa="source ~/.alias"
+alias vrc="vi ~/_vimrc"
+alias cl="clear"
+alias ..="cd ../"
+alias gitm="git checkout master"
+
+### GIT ###
+# $ git remote -v
+# origin  https://github.com/robertcscheng/test2.git (fetch)
+# origin  https://github.com/robertcscheng/test2.git (push)
+# git help
+# git branch -h
+# git branch --merged // list all merged branches
+# git branch -d <branch-name>   
+# git pull --prune // Your local branch is gone after delete, but the remote tracking branch is still there. To delete tracking do: "git pull --prune" OR do: "git config --global fetch.prune true" to make it as a default behavvior 
+# git branch --all 
+# git switch master
+# git pull // = git fetch + git merge
+# git clone  https://github.com/robertcscheng/test.git
+# git log --oneline --graph --all
+# git log --stat
+# git log --patch
+# git config --list
+# git config --global alias.lol "log --oneline --graph --decorate --all"   // create global alias for cmd "git lol"
+ 
+# When you push, you will be asked to enter your GitHub username and password. If you would like Git to remember your credentials on this computer, you can cache your credentials using:
+# Windows: git config --global credential.helper wincred
+## Alias
+# git config --global alias.co checkout
+# git config --global alias.br branch
+# git config --global alias.ci commit
+# git config --global alias.st status
+# git config --global alias.unstage 'reset HEAD --'
+# https://githubtraining.github.io/training-manual/#/11_streamline_workflow_with_aliases
+#
+## Full workflow: clone, create branch, edit, commit, push new branch, PR, Merge, Delete branch, update local repository:
+# 1. Clone your copy of the repository: git clone https://github.com/githubschool/github-games-USERNAME.git
+# 2. Create a new branch called readme-update: git switch -c readme-update
+# 3. Edit the URL in the README.md.
+# 4. Commit the changes to your branch.
+# 5. Push your branch to GitHub: git push -u origin rc_dev_branch
+# 6. Create a Pull Request in your repository (base: main, compare: readme-update)
+# 7. Merge your Pull Request.
+# 8. Delete the branch on GitHub.
+# 9. Update your local copy of the repository: git pull --prune
+#
+# git show SHA // To see what was changed in the commit
+#
+## git revert
+#  git revert 56efd9df0fb3fdcb03ef0ebc2a73ea0740f931ee
+#   Auto-merging README.md
+#   CONFLICT (content): Merge conflict in README.md
+#   error: could not revert 56efd9d... Update README.md
+#   hint: After resolving the conflicts, mark them with
+#   hint: "git add/rm <pathspec>", then run
+#   hint: "git revert --continue".
+#   hint: You can instead skip this commit with "git revert --skip".
+#   hint: To abort and get back to the state before "git revert",
+#   hint: run "git revert --abort".
